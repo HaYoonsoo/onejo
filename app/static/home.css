@@ -1,0 +1,33 @@
+h1 {
+
+  font-family: "NanumGothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;  /* identical to box height */
+
+  color: #b1b8c0;
+}
+
+
+h2 {
+    position: absolute;
+    width: 346px;
+    height: 517px;
+    left: 15px;
+    top: 304px;
+    
+    background: #F2F4F6;
+    border-radius: 18px 18px 0px 0px;
+}
+p {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
