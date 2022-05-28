@@ -7,33 +7,30 @@
 {% block title %}시간저금통{% endblock title %}
 
 {% block wrapper %}
-<h1>시간저금통</h1>
-    <ul>
-        <li>
-            <p>{{ user.profile.nickname }} 님</p>
-        </li>
+<top>시간저금통</top>
 
-        <li>
-            <a href="{% url 'pig_new' %}">돼지 생성</a>
-            <main><p>지금까지 {{ user.profile.nickname }} 님은</p>
-    
+            <a href="{% url 'logout' %}">
+            <img class="logout" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfMjY5/MDAxNjUzNzM2MDE0OTE2.t9vWy0Az1X7yCaUN-pSi39eJifqeRiPd2FQHVmDftNUg.H9qXvKzveMAr1273qUEx3O_ATpH_AabktEASKpTedFMg.PNG.skycolor10/Group_56_%281%29.png?type=w1">
+            </a>
+
+            <a href="{% url 'pig_new' %}">
+                <img class="plus" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfMTc2/MDAxNjUzNzM2MDE0NjUw.ngd1xIhmuZH8Oxheqwq9Jos_FXSG9AJBBx7fMlgH9sAg.O_imRCqvbho-_iy7KnMLMz6AALim56ZPtON_EukIHKUg.PNG.skycolor10/Group_1.png?type=w1">
+            </a>
+
+            <img class="pig" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfOSAg/MDAxNjUzNzM3NDc1OTA1.bgclJwg9M_MSy8DqGu1RX8vNCRVJJQA5g5ViGf6aiyQg.tpKBJHv8lqLirgaVICniPdII5skLcSaUp8ucBgQppfYg.PNG.skycolor10/Group_62.png?type=w1">
+            <p>지금까지 {{ user.profile.nickname }} 님은</p>
+            <br>
             <h2 class="time">mypig 늦은 시간 총합</h2>
-            <p>지각하셨네요.</p></main>
-            
+            <p1>지각하셨네요.</p1>
             
         <allpigs><mypigs class="text1">내 돼지들</mypigs>
-            <ul>
-            {% for pig in pigs %}
-            <li>
-                <a href="{% url 'pig_detail' %}">{{ pig.pig_name }}</a>
-            </li>
+            
+            <piglist>{% for pig in pigs %}
+                <a href="{% url 'pig_detail' %}"><br>{{ pig.pig_name }}</a>
             {% endfor %}
-        </ul> </allpigs>
+            </piglist>
+             </allpigs>
 
-
-        <li>
-            <a href="{% url 'logout' %}">로그아웃</a>
-        </li>
     </ul>
 {% endblock wrapper %}
 
