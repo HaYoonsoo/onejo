@@ -24,14 +24,10 @@
             <p1>지각하셨네요.</p1>
             
         <allpigs><mypigs class="text1">내 돼지들</mypigs>
-            
             <piglist>{% for pig in pigs %}
                 <a href="{% url 'pig_detail' %}"><br>{{ pig.pig_name }}</a>
-            {% endfor %}
-            </piglist>
+                {% endfor %} </piglist>
              </allpigs>
-
-    </ul>
 {% endblock wrapper %}
 
 {% block script %}

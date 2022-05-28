@@ -49,5 +49,8 @@ div.text{
 h1 {
     font-family: 'NanumGothic';
     font-style: normal;
-    font-size: 13px;
+    font-size: 20px;
+    padding-top: 200px;
+    font-weight: 100;
+    color: aliceblue;
 }
