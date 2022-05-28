@@ -5,6 +5,7 @@ from .models import Profile, Pig, Schedule
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/registration/login')
 def home(request):
     pigs = Pig.objects.all()
     return render(request, "home.html",{'pigs': pigs})
