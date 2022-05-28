@@ -58,7 +58,6 @@ const fade = (() => {
       return false;
     };
   }
-
   for (const btn of document.querySelectorAll('button')) {
     if (btn.type === 'submit') {
       btn.onclick = () => {
@@ -70,7 +69,8 @@ const fade = (() => {
   }
 
   return {
-    fadeIn: fadeIn, 
-    fadeOut: fadeOut
+    fadeIn: fadeIn,
+    fadeOut: fadeOut,
+    delay: delay,
   };
 })();

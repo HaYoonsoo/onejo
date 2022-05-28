@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block css %}
+{% load static %}  
+{% endblock css %}
+
+{% block title %}{% endblock title %}
+
+{% block wrapper %}
+<h4>저금통을 깨고, <br>
+    ㅌㅌㅌ님께 <br>
+    ㅌㅌㅌ원을 보낼까요?</h4>
+
+<a href="{% url 'bye_winner_complete' pig.pk %}">확인</a>
+<a href="#" onclick="history.back();">취소</a>
+
+{% endblock wrapper %}
+
+{% block script %}
+{% endblock script %}
