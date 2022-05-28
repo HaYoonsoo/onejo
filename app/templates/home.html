@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load socialaccount %} {% providers_media_js %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,6 @@
 </head>
 <body>
     <h1>시간저금통</h1>
-    <h2>테스트용</h2>
     <ul>
         {% if user.is_authenticated %}
         <li>
@@ -28,7 +28,7 @@
         <ul>
             {% for pig in pigs %}
             <li>
-                <a href="{% url 'pig_detail' %}">{{ pig.pig_name }}</a>
+                <a href="{% url 'pig_detail' pig.pk %}">{{ pig.pig_name }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -47,6 +47,23 @@
                 <button>로그인</button>
             </form>
         </section>
+        {% comment %} <li>
+            <a href={% provider_login_url 'kakao' %}"">카카오 로그인</a>
+        </li> {% endcomment %}
+        <form
+            class="login"
+            method="POST"
+            action="{% provider_login_url 'kakao' %}"
+        >
+        {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+        <input
+            type="hidden"    
+            name="{{ redirect_field_name }}"
+            value="{{ redirect_field_value }}"
+        />
+        {% endif %}
+        <button class="primaryAction" type="submit">카카오 로그인</button>
+        </form>
 
         <li>
             <a href="{% url 'signup' %}">회원가입</a>

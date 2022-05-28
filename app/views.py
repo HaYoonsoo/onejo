@@ -9,7 +9,6 @@ def home(request):
     pigs = Pig.objects.all()
     return render(request, "home.html",{'pigs': pigs})
 
-
 def signup(request):
     if request.method == "POST":
         profile = Profile()
@@ -25,7 +24,7 @@ def signup(request):
 
         profile.save()
 
-        auth.login(request, new_user)
+        auth.login(request, new_user, backend="django.contrib.auth.backends.ModelBackend")
 
         return redirect("home")
     return render(request, "registration/signup.html")
@@ -36,8 +35,10 @@ def login(request):
         password = request.POST["password"]
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
-            return redirect("home")
+            auth.login(
+                request, user, backend="django.contrib.auth.backends.ModelBackend")
+            # return redirect("home")
+            return redirect(request.GET.get("next", "/"))
         error = "아이디 또는 비밀번호가 틀립니다."
         return render(request, "registration/login.html", {"error":error})
     return render(request, "registration/login.html")
@@ -61,7 +62,7 @@ def pig_new(request):
 
 
 
-def pig_detail(request):
+def pig_detail(request, pig_pk):
     return render(request, 'pig_detail.html')
 
 def schedule_new(request):
@@ -73,3 +74,12 @@ def pig_bye(request):
 
 def landing(request):
     return render(request, 'landing.html')
+
+def bye_winner(request):
+    return render(request, 'bye_winner.html')
+
+def bye_donate(request):
+    return render(request, 'bye_donate.html')
+
+def bye_winner_complete(request):
+    return render(request, 'bye_winner_complete.html')
