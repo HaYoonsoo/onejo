@@ -21,15 +21,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('registration/signup', views.signup, name="signup"),
-    path('registration/login', views.login, name="login"),
     path('registration/logout', views.logout, name="logout"),
     path('pig_new', views.pig_new, name="pig_new"),
     path('pig_detail/<int:pig_pk>', views.pig_detail, name="pig_detail"),
     path('schedule_new/<int:pig_pk>', views.schedule_new, name="schedule_new"),
     path('pig_bye', views.pig_bye, name="pig_bye"),
-    path('home/', views.landing, name="landing"),
+    path('landing/', views.landing, name="landing"),
     path('accounts/', include("allauth.urls")),
     path('bye_donate', views.bye_donate, name="bye_donate"),
     path('bye_winner', views.bye_winner, name="bye_winner"),
     path('bye_winner_complete', views.bye_winner_complete, name="bye_winner_complete"),
+    path('bye_donate_complete', views.bye_donate_complete, name="bye_donate_complete"),
 ]
+
