@@ -25,9 +25,8 @@ urlpatterns = [
     path('registration/logout', views.logout, name="logout"),
     path('registration/logout', views.logout, name="logout"),
     path('pig_new', views.pig_new, name="pig_new"),
-    path('pig_detail', views.pig_detail, name="pig_detail"),
-    path('schedule_new', views.schedule_new, name="schedule_new"),
+    path('pig_detail/<int:pig_pk>', views.pig_detail, name="pig_detail"),
+    path('schedule_new/<int:pig_pk>', views.schedule_new, name="schedule_new"),
     path('pig_bye', views.pig_bye, name="pig_bye"),
     path('', views.landing, name="landing"),
-
 ]

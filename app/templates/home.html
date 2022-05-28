@@ -28,7 +28,7 @@
         <ul>
             {% for pig in pigs %}
             <li>
-                <a href="{% url 'pig_detail' %}">{{ pig.pig_name }}</a>
+                <a href="{% url 'pig_detail' pig.pk %}">{{ pig.pig_name }}</a>
             </li>
             {% endfor %}
         </ul>

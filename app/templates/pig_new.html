@@ -10,17 +10,30 @@
     <h1>돼지 생성!</h1>
     <form action="/pig_new" method="post">
         {% csrf_token %}
-        <input type="text" name="pig_name" placeholder="돼지 이름">
 
-        <input type="text" name="pig_description" placeholder="돼지 설명">
-        <input type="text" name="exchange_rate" placeholder="지각하면 얼마">
-        
+        <div class="pig-info-basic">
+            <h2>돼지 저금통 정보<h2>
+            
+            <span>모임 명</span>
+            <input name="pig_name" type="text" placeholder="돼지 이름">
+            <br/>
+            <span>모임 설명</span>
+            <input name="pig_description" type="text" placeholder="돼지 설명">
+            <br/>
+            <span>지각하면... 얼마?</span>
+            <input name="exchange_rate" type="text" placeholder="지각하면 얼마">
+        </div>
+
+        <div class="pig-info-member">
+          <h2>멤버 추가<h2>
+            
+          {{profils}}
+        </div>
+
         <button type="submit">생성!</button>
 
 
 
-        <h2>멤버 추가</h2>
-        <h2>저금 단위 / 1분당 얼마? 설정</h2>
 
 
     </form>

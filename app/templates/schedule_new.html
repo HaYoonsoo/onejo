@@ -8,16 +8,14 @@
 </head>
 <body>
     <h1>일정 생성!</h1>
-    <form action="/makePig" method="post"> 
-      {% comment %} action 수정해야됨 {% endcomment %}
+    <form action="{% url 'schedule_new' pig_pk %}" method="POST"> 
         {% csrf_token %}
         <input type="text" name="schedule_name" placeholder="일정 이름">
         <input type="text" name="schedule_description" placeholder="일정 설명">
-        <h2>일정 장소 추가</h2>
-        <h2>일정 날짜 추가</h2>
+        <input type="text" name="where_to_meet" placeholder="만날 장소">
+        <input type="text" name="when_to_meet" placeholder="YYYY-MM-DD HH:MM">
 
         <button type="submit">생성!</button>
-
     </form>
 </body>
 </html>
