@@ -1,8 +1,8 @@
-div.wrapper{
+.wrapper{
     height:812px;
     width:375px;
     margin:0 auto;
-    border:1px solid white;
+    /* border:1px solid white; */
     display:flex;
     flex-direction:column;
     align-items:center;

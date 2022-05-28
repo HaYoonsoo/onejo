@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
   font-family: "NanumGothic";
   font-style: normal;
   font-weight: 700;
@@ -7,7 +7,7 @@ h1 {
   text-align: center;  /* identical to box height */
 
   color: #b1b8c0;
-}
+} */
 
 h2.time {
     font-family: 'Noto Sans KR';
@@ -40,45 +40,73 @@ input{
 }
 
 div.wrapper{
-    height:812px;
-    width:375px;
+    min-height:100vh;
+    max-width:375px;
+    width:100%;
     margin:0 auto;
-    border:1px solid white;
+    /* border:1px solid gray; */
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
 }
 
-mypigs.text1{
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
+h1{
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    margin-bottom:40px;;
+    width: 151px;
+    height: 32px;
+    font-family:'NanumGothic';
+    font-style:normal;
+    font-size: 30px;
+    font-weight: 700;
+    color: #4880EE;
 }
 
-mypigs{
-    background: #F2F4F6;
-    border-radius: 18px 18px 0px 0px;
-    width: 346px;
-    height: 517px;
+div.input{
+
 }
 
-main {
-    width: 309px;
-    height: 167px;
-    left: 25px;
-    top: 101px;
-    background: #A9C6FF;
-    border-radius: 83.5px;
+input{
+    box-sizing: border-box;
+    width: 90%;
+    height: 47px;
+    background: white;
+    border-radius: 12px;
+    border-color: lightgray;
+    border:1px solid;
 }
-main1 {
-    width: 45px;
-    height: 41px;
-    left: 107px;
-    top: 244px;
-    background: #A9C6FF;
-    border-radius: 6px;
+
+div.button{
+    display:flex;
+    justify-content:center;
+}
+
+button{
+    width:80%;
+    height: 47px;
+    /* margin-left: 136px;
+    margin-top: 450px; */
+    background: #4880EE;
+    border-radius: 12px;
+    margin: 0 auto;
+
+}
+.idpw {
+    display: flex;
+    width:100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login_button{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+ul{
+    padding:0px;
 }
