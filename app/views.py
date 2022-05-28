@@ -24,7 +24,7 @@ def signup(request):
 
         profile.save()
 
-        auth.login(request, new_user, backend="django.contrib.auth.backends.ModelBackend")
+        auth.login(request, new_user)
 
         return redirect("home")
     return render(request, "registration/signup.html")
@@ -36,9 +36,9 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(
-                request, user, backend="django.contrib.auth.backends.ModelBackend")
-            # return redirect("home")
-            return redirect(request.GET.get("next", "/"))
+                request, user)
+            return redirect("home")
+            
         error = "아이디 또는 비밀번호가 틀립니다."
         return render(request, "home.html", {"error":error})
     return render(request, "registration/login.html")
