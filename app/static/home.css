@@ -1,4 +1,15 @@
-top {
+.navbar {
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar p {
     font-family: 'NanumGothic';
     font-style: normal;
     font-weight: 700;
@@ -6,91 +17,75 @@ top {
     line-height: 20px;
     color: #B1B8C0;
 }
-
-
+.navbar img {
+    width: 1.125rem;
+    height: 1.125rem;
+}
 makepig {
     margin-right: -10px;
 }
-
-p {
+.mainBanner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+.mainBanner p {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 23px;
     text-align: center;
     color: #FFFFFF;
-    margin-bottom:230px;
+    /* line-height: 100%; */
+    /* padding-top: 20%; */
+    /* margin-bottom:230px;
     position: absolute;
+    margin-left: 100px;
+    margin-top:-150px; */
 }
-h2.time {
+
+.time {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 58px;
     text-align: center;
+    /* margin-left: 80px; */
     color: #4880EE;
-    margin-top: -120px;
-    position: absolute;
+    /* margin-top: -120px;
+    position: absolute; */
 }
 
-p1 {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-bottom:60px;
-    position: absolute;
-}
-
-
-main {
-    width: 309px;
-    height: 167px;
-    background: #A9C6FF;
-    border-radius: 83.5px;
-    margin: 10px;
-    position: absolute;
-}
-
-allpigs {
-    width: 346px;
+.allpigs {
+    width: 90%;
     height: auto;
-    padding-top: 100px;
-    left: 15px;
-    top: 304px;
+    /* left: 15px;
+    top: 304px; */
     background: #F2F4F6;
     border-radius: 18px 18px 0px 0px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     color: black;
     padding: 16px;
-    padding-top: 16px;
+    padding-top: 20px;
     margin-top: 10px;
 }
-}
 
-mypigs.text1 {
+.text1 {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     color: black;
-    padding: 16px;
     padding-top: 16px;
 }
-allpigs{ 
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    color: black;
-    padding: 16px;
-    padding-top: 16px;
-    margin-top: 10px;
-}
-.plus {
+
+/* .plus {
     width: 18px;
     height: 18px;
     margin-right: 350px;
@@ -100,7 +95,7 @@ allpigs{
     width: 18px;
     height: 18px;
     margin-left: 350px;
-}
+} */
 
 .pig {
     width: 344.04px;
@@ -108,16 +103,15 @@ allpigs{
 
 }
 
-piglist {
+.piglist {
     font-family: 'Noto Sans KR';
     font-style: normal;
     color: black;
     font-weight: 500;
-    margin-top: 20px;
-    margin-left: 16px;
-    padding-top: 25px;
+    /* margin-top: 5vh; */
+    /* margin-left: 16px; */
     line-height: 30px;
-
+    
 }
 input{
     box-sizing: border-box;
@@ -127,17 +121,7 @@ input{
     border-radius: 12px;
 }
 
-div.wrapper{
-    min-height:100vh;
-    max-width:375px;
-    width:100%;
-    margin:0 auto;
-    /* border:1px solid gray; */
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-}
+
 
 h1{
     display:flex;
@@ -177,7 +161,6 @@ button{
     background: #4880EE;
     border-radius: 12px;
     margin: 0 auto;
-
 }
 .idpw {
     display: flex;

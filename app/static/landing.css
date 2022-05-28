@@ -2,7 +2,7 @@ body{
     background: #4880EE;
 }
 
-div.wrapper{
+/* div.wrapper{
     height:812px;
     width:375px;
     margin:0 auto;
@@ -11,7 +11,7 @@ div.wrapper{
     flex-direction:column;
     align-items:center;
     justify-content:center;
-}
+} */
 
 div.pigntxt{
     width:400px;
@@ -49,5 +49,8 @@ div.text{
 h1 {
     font-family: 'NanumGothic';
     font-style: normal;
-    font-size: 13px;
+    font-size: 20px;
+    padding-top: 200px;
+    font-weight: 100;
+    color: aliceblue;
 }
