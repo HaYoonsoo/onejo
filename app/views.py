@@ -5,9 +5,23 @@ from .models import Profile, Pig, Schedule
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def home(request):
-    pigs = Pig.objects.all()
-    return render(request, "home.html",{'pigs': pigs})
+
+
+def home(request): #이건 원래 Login views인데 일단 이름을 home으로 바꾸고 합침
+    if request.method == "POST":
+        pigs = Pig.objects.all()
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(
+                request, user, backend="django.contrib.auth.backends.ModelBackend")
+            # return redirect("home")
+            return redirect(request.GET.get("next", "/"))
+        error = "아이디 또는 비밀번호가 틀립니다."
+        return render(request, "home.html", {"error":error, "pigs":pigs})
+    return render(request, "home.html")
+
 
 def signup(request):
     if request.method == "POST":
@@ -28,20 +42,6 @@ def signup(request):
 
         return redirect("home")
     return render(request, "registration/signup.html")
-
-def login(request):
-    if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = auth.authenticate(request, username=username, password=password)
-        if user is not None:
-            auth.login(
-                request, user, backend="django.contrib.auth.backends.ModelBackend")
-            # return redirect("home")
-            return redirect(request.GET.get("next", "/"))
-        error = "아이디 또는 비밀번호가 틀립니다."
-        return render(request, "registration/login.html", {"error":error})
-    return render(request, "registration/login.html")
 
 def logout(request):
     auth.logout(request)
@@ -97,3 +97,6 @@ def bye_donate(request):
 
 def bye_winner_complete(request):
     return render(request, 'bye_winner_complete.html')
+
+def bye_donate_complete(request):
+    return render(request, 'bye_donate_complete.html')
