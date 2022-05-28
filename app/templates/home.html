@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <title>Document</title>
 </head>
 <body>
     <h1>시간저금통</h1>
+    <h2>테스트용</h2>
     <ul>
         {% if user.is_authenticated %}
         <li>
             <p>{{ user.profile.nickname }} 님</p>
         </li>
+
         <li>
             <a href="{% url 'pig_new' %}">돼지 생성</a>
         </li>   
@@ -34,6 +37,7 @@
         </li>
         {% else %}
         <section>
+
             <form method="POST">
                 {% csrf_token %} {% if error %}
                 <p>{{ error }}</p>
@@ -43,12 +47,13 @@
                 <button>로그인</button>
             </form>
         </section>
+
         <li>
             <a href="{% url 'signup' %}">회원가입</a>
         </li>
         {% endif %}
     </ul>
 
-
+    <script src=
 </body>
 </html>

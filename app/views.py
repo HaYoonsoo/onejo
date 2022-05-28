@@ -9,6 +9,7 @@ def home(request):
     pigs = Pig.objects.all()
     return render(request, "home.html",{'pigs': pigs})
 
+
 def signup(request):
     if request.method == "POST":
         profile = Profile()
@@ -52,10 +53,11 @@ def pig_new(request):
         new_Pig = Pig.objects.create(
             pig_name = request.POST["pig_name"],
             pig_description = request.POST["pig_description"],
+            exchange_rate = request.POST["exchange_rate"],
+
         )
         return redirect('home')
     return render(request, 'pig_new.html')
-
 
 
 

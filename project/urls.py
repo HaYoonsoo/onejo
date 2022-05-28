@@ -19,7 +19,7 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
+    path('home/', views.home, name="home"),
     path('registration/signup', views.signup, name="signup"),
     path('registration/login', views.login, name="login"),
     path('registration/logout', views.logout, name="logout"),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('pig_detail', views.pig_detail, name="pig_detail"),
     path('schedule_new', views.schedule_new, name="schedule_new"),
     path('pig_bye', views.pig_bye, name="pig_bye"),
+
 ]
