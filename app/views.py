@@ -67,9 +67,6 @@ def pig_detail(request, pig_pk):
 
     return render(request, 'pig_detail.html', {'pig': pig, 'schedules': schedules})
 
-def pig_detail(request, pig_pk):
-    return render(request, 'pig_detail.html')
-
 
 def schedule_new(request, pig_pk):
     if request.method =='POST':
