@@ -11,6 +11,7 @@
     <form action="/pig_new" method="post">
         {% csrf_token %}
         <input type="text" name="pig_name" placeholder="돼지 이름">
+
         <input type="text" name="pig_description" placeholder="돼지 설명">
         <input type="text" name="exchange_rate" placeholder="지각하면 얼마">
         
@@ -23,8 +24,6 @@
 
 
     </form>
-
-
 
     </body>
 </html>

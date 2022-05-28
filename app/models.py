@@ -29,9 +29,8 @@ class Pig(models.Model):
     pig_description = models.TextField()
     # participants = models.ForeignKey(Participants, on_delete=models.CASCADE, related_name="pig_info")
     exchange_rate = models.FloatField(validators=[MinValueValidator(1)])
-
     def __str__(self):
-        return self.Pig_name
+        return self.pig_name
 
   
 class Schedule(models.Model):
