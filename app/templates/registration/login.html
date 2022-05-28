@@ -8,14 +8,17 @@
 </head>
 <body>
     <section>
-        <form method="POST">
+        <form method="POST" data-form-id="1">
             {% csrf_token %} {% if error %}
             <p>{{ error }}</p>
             {% endif %}
             <input type="text" name="username" placeholder="아이디" />
             <input type="password" name="password" placeholder="비밀번호" />
-            <button>로그인</button>
+            <button data-form-id="1">로그인</button>
         </form>
     </section>
-</body>
+
+    {% load static %}
+    <script src="{% static 'fade.js' %}"></script>
+  </body>
 </html>
