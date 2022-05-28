@@ -87,7 +87,7 @@ submit.onclick = () => {
   for ( const user of userAdded ) {
     const userInput = document.createElement('input');
     userInput.setAttribute('type', 'text');
-    userInput.setAttribute('name', 'user_list');
+    userInput.setAttribute('name', 'user_list[]');
     userInput.setAttribute('value', String(user.pk));
     form.appendChild(userInput);
   }
