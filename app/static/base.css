@@ -1,0 +1,10 @@
+div.wrapper{
+    min-height:812px;
+    max-width:375px;
+    margin:0 auto;
+    /* border:1px solid white; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
