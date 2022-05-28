@@ -1,6 +1,6 @@
-.wrapper{
-    height:812px;
-    width:375px;
+div.wrapper{
+    min-height:812px;
+    max-width:375px;
     margin:0 auto;
     /* border:1px solid white; */
     display:flex;
