@@ -11,8 +11,7 @@
 
 {% block wrapper %}
 
-<div class="user-data">
-  1:갑인간&2:갑인다&3:병인간&4:정인간&
+<div class="user-data hidden">
   {% for profile in profiles %}
   {{profile.user.pk}}:{{profile.nickname}}&
   {% endfor %}
