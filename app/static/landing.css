@@ -26,6 +26,11 @@ div.pigfig{
     height:89.48px;
 }
 
+.pig{
+    width:108px;
+    height:89.48px;
+}
+
 div.text{
     width: 113px;
     height: 24px;
@@ -39,4 +44,10 @@ div.text{
     /* identical to box height */
     text-align: center;
     color: #FFFFFF;
+}
+
+h1 {
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-size: 13px;
 }

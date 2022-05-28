@@ -1,27 +1,35 @@
-div.wrapper{
-    height:812px;
-    width:375px;
-    margin:0 auto;
-    border:1px solid white;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+/* h1 {
+  font-family: "NanumGothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;  /* identical to box height */
+
+  color: #b1b8c0;
+} */
+
+h2.time {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 58px;
+    text-align: center;
+    color: #4880EE;
 }
 
-h1{
-    position:;
-    width: 95px;
-    height: 20px;
-    left: 140px;
-    top: 53px;
-    font-family: 'NanumGothic';
-    font-style:normal;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: left;
-    color: #B1B8C0;
+p {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
 }
+
+
 
 input{
     box-sizing: border-box;
@@ -29,4 +37,76 @@ input{
     height: 47px;
     background: #FFFFFF;
     border-radius: 12px;
+}
+
+div.wrapper{
+    min-height:100vh;
+    max-width:375px;
+    width:100%;
+    margin:0 auto;
+    /* border:1px solid gray; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+h1{
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    margin-bottom:40px;;
+    width: 151px;
+    height: 32px;
+    font-family:'NanumGothic';
+    font-style:normal;
+    font-size: 30px;
+    font-weight: 700;
+    color: #4880EE;
+}
+
+div.input{
+
+}
+
+input{
+    box-sizing: border-box;
+    width: 90%;
+    height: 47px;
+    background: white;
+    border-radius: 12px;
+    border-color: lightgray;
+    border:1px solid;
+}
+
+div.button{
+    display:flex;
+    justify-content:center;
+}
+
+button{
+    width:80%;
+    height: 47px;
+    /* margin-left: 136px;
+    margin-top: 450px; */
+    background: #4880EE;
+    border-radius: 12px;
+    margin: 0 auto;
+
+}
+.idpw {
+    display: flex;
+    width:100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login_button{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+ul{
+    padding:0px;
 }
