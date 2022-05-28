@@ -1,0 +1,32 @@
+div.wrapper{
+    height:812px;
+    width:375px;
+    margin:0 auto;
+    border:1px solid white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+h1{
+    position:;
+    width: 95px;
+    height: 20px;
+    left: 140px;
+    top: 53px;
+    font-family: 'NanumGothic';
+    font-style:normal;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    color: #B1B8C0;
+}
+
+input{
+    box-sizing: border-box;
+    width: 324px;
+    height: 47px;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
