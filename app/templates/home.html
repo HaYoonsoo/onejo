@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'app/home.css' %}">
-{% endblock css %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-{% block title %}시간저금통{% endblock title %}
-
-{% block wrapper %}
-<h1>시간저금통</h1>
-    <h2>테스트용</h2>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Document</title>
+</head>
+<body>
+    <h1>시간저금통</h1>
     <ul>
         {% if user.is_authenticated %}
         <li>
@@ -35,35 +36,9 @@
             <a href="{% url 'logout' %}">로그아웃</a>
         </li>
         {% else %}
-        <section>
-
-            <form method="POST">
-                {% csrf_token %} {% if error %}
-                <p>{{ error }}</p>
-                {% endif %}
-                <input type="text" name="username" placeholder="아이디" />
-                <input type="password" name="password" placeholder="비밀번호" />
-                <button>로그인1</button>
-            </form>
-        </section>
-        {% comment %} <li>
-            <a href={% provider_login_url 'kakao' %}"">카카오 로그인</a>
-        </li> {% endcomment %}
-        <form
-            class="login"
-            method="POST"
-            action="{% provider_login_url 'kakao' %}"
-        >
-        {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
-        <input
-            type="hidden"    
-            name="{{ redirect_field_name }}"
-            value="{{ redirect_field_value }}"
-        />
-        {% endif %}
-        <button class="primaryAction" type="submit">카카오 로그인</button>
-        </form>
-
+        <li>
+            <a href="{% url 'login' %}">로그인</a>
+        </li>
         <li>
             <a href="{% url 'signup' %}">회원가입</a>
         </li>
