@@ -69,3 +69,7 @@ def schedule_new(request):
 
 def pig_bye(request):
     return render(request, 'pig_bye.html')
+
+
+def landing(request):
+    return render(request, 'landing.html')
