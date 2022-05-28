@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>돼지 생성!</h1>
+    <form action="/pig_new" method="post">
+        {% csrf_token %}
+        <input type="text" name="pig_name" placeholder="돼지 이름">
+
+        <input type="text" name="pig_description" placeholder="돼지 설명">
+        <input type="text" name="exchange_rate" placeholder="지각하면 얼마">
+        
+        <button type="submit">생성!</button>
+
+
+
+        <h2>멤버 추가</h2>
+        <h2>저금 단위 / 1분당 얼마? 설정</h2>
+
+
+    </form>
+
+    </body>
+</html>
