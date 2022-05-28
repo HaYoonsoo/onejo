@@ -45,3 +45,9 @@ div.text{
     text-align: center;
     color: #FFFFFF;
 }
+
+h1 {
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-size: 13px;
+}

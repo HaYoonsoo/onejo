@@ -9,9 +9,9 @@
 {% block wrapper %}
 <h1>시간저금통</h1>
     <ul>
-        <a href="{% url 'pig_new' %}">돼지 생성</a>
         <img src="https://blogfiles.pstatic.net/MjAyMjA1MjhfMjAy/MDAxNjUzNzI5OTkzNzQw.cGMxkmj5QhBHyYXrVJcOp3JzPrxjOyoSbAKpAIw8xoQg.5wMgANpPgzPETa27oFAdyPrP1chT-qpfxc0El7Q4ly0g.JPEG.skycolor10/Group_1.jpg?type=w1">
         {% if user.is_authenticated %}
+            <a href="{% url 'pig_new' %}">돼지 생성</a>
             <main><p>지금까지 {{ user.profile.nickname }} 님은</p>
     
             <h2 class="time">mypig 늦은 시간 총합</h2>
