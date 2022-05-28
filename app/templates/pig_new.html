@@ -17,15 +17,16 @@
   {% endfor %}
 </div>
 
-<form method="POST" data-form-id="1"><span>모임 명</span>
-  <input name="pig_name" type="text" placeholder="돼지 이름">
+<form method="POST" data-form-id="1">
+  {% csrf_token %}
+  <span>모임 명</span>
+  <input name="pig_name" type="text" placeholder="돼지 이름" required>
   <br/>
   <span>모임 설명</span>
-  <input name="pig_description" type="text" placeholder="돼지 설명">
+  <input name="pig_description" type="text" placeholder="돼지 설명" required>
   <br/>
   <span>지각하면... 얼마?</span>
-  <input name="exchange_rate" type="text" placeholder="지각하면 얼마">
-  {% csrf_token %}
+  <input name="exchange_rate" type="text" placeholder="지각하면 얼마" required>
 </form>
 
 <input class="search-bar" />
@@ -60,12 +61,3 @@
 {% block script %}
 <script src="{% static 'pig_new.js' %}"></script>
 {% endblock script %}
-
-
-
-/////
-
-<div class="pig-info-basic">
-  <h2>돼지 저금통 정보<h2>
-  
-</div>
