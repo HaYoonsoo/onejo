@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <title>Document</title>
-</head>
-<body>
-    <h1>시간저금통</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/home.css' %}">
+{% endblock css %}
+
+{% block title %}시간저금통{% endblock title %}
+
+{% block wrapper %}
+<h1>시간저금통</h1>
     <h2>테스트용</h2>
     <ul>
         {% if user.is_authenticated %}
@@ -33,7 +32,8 @@
         </li>
         {% endif %}
     </ul>
+{% endblock wrapper %}
 
-    <script src="{% static "index.js" %}"></script>
-</body>
-</html>
+{% block script %}
+<script src="{% static "index.js" %}"></script>
+{% endblock script %}  

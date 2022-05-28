@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="../static/1st.css">
+{% endblock css %}
+
+{% block title %}Landing{% endblock title %}
 
 {% block wrapper %}
-<h1>Hi</h1>
+<div class="wrapper">
+    <div class="pigntxt">
+        <div class="pigfig"><img class="pig" src="./images/pig.svg" alt="돼지얼굴"></div>
+        <div class="text"><p>시간저금통</p></div>
+    </div>
+</div>
 {% endblock wrapper %}
