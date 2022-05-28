@@ -1,7 +1,11 @@
 body{
     background: #4880EE;
 }
-
+a {
+    text-decoration: none;
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
 /* div.wrapper{
     height:812px;
     width:375px;
