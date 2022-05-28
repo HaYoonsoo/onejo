@@ -9,7 +9,6 @@
 {% block wrapper %}
 <h1>시간저금통</h1>
     <ul>
-        {% if user.is_authenticated %}
         <li>
             <p>{{ user.profile.nickname }} 님</p>
         </li>
@@ -33,28 +32,5 @@
         <li>
             <a href="{% url 'logout' %}">로그아웃</a>
         </li>
-        {% else %}
-        <section>
-
-            <form method="POST">
-                {% csrf_token %} {% if error %}
-                <p>{{ error }}</p>
-                {% endif %}
-                <div class="idpw">
-                    <input type="text" name="username" placeholder="아이디" />
-                    <input type="password" name="password" placeholder="비밀번호" />
-                </div>
-                <div class="login_button">
-                    <button>로그인</button>
-                </div>
-                
-                
-            </form>
-        </section>
-
-        <li>
-            <a href="{% url 'signup' %}">회원가입</a>
-        </li>
-        {% endif %}
     </ul>
 {% endblock wrapper %}
