@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form method="POST" data-form-id="1">
+            {% csrf_token %} {% if error %}
+            <p>{{ error }}</p>
+            {% endif %}
+            <input type="text" name="username" placeholder="아이디" />
+            <input type="password" name="password" placeholder="비밀번호" />
+            <button data-form-id="1">로그인</button>
+        </form>
+    </section>
+
+    {% load static %}
+    <script src="{% static 'fade.js' %}"></script>
+  </body>
+</html>

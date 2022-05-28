@@ -1,5 +1,4 @@
 h1 {
-
   font-family: "NanumGothic";
   font-style: normal;
   font-weight: 700;
@@ -29,5 +28,25 @@ p {
     line-height: 23px;
     text-align: center;
     color: #FFFFFF;
+}
 
+
+
+input{
+    box-sizing: border-box;
+    width: 324px;
+    height: 47px;
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+div.wrapper{
+    height:812px;
+    width:375px;
+    margin:0 auto;
+    border:1px solid white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 }
