@@ -7,15 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>이 모임에서 내가 늦은 시간 총합/이 모임의 모든 사람들 늦은 시간 총합</h2>
 
-    <h2>이 모임에서 내가 늦은 시간 총합</h2>
-    <h2>저금통 깨기 페이지로 넘어가는 버튼</h2>
-    <a href = "{% pig_bye.html %}">저금통 깨기</a>
+    <div class="pig_bye">
+        <a href="{% url 'pig_bye' %}">저금통 깨기</a>
+    </div>
 
-    <h2>일정 관련 섹션 - 추가 버튼(<a> - url) / 이미 생성된 일정 정보</h2>
-    <h2>참여자 막대 - 데이터 계산만 잘 해서 프론트한테 말해보자^^</h2>
-    <h2></h2>
-    <h2></h2>
+    <div class="schedule">
+        <a href="{% url 'schedule_new' pig.pk %}">일정 추가</a>
+
+        <div class="schedule_list">
+          {% for schedule in schedules %}
+          <li> 
+              {{schedule.schedule_name}}
+              {{schedule.schedule_description}}
+              {{schedule.when_to_meet}}
+              {{schedule.where_to_meet}}
+          </li>
+          {% endfor %}
+        </div>
+    
+    
+    </div>
+    
+    <a href="{% url 'home' %}">홈으로 가기</a>
 
 </body>
 </html>
