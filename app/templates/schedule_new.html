@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>일정 생성!</h1>
+    <form action="/makePig" method="post"> 
+      {% comment %} action 수정해야됨 {% endcomment %}
+        {% csrf_token %}
+        <input type="text" name="schedule_name" placeholder="일정 이름">
+        <input type="text" name="schedule_description" placeholder="일정 설명">
+        <h2>일정 장소 추가</h2>
+        <h2>일정 날짜 추가</h2>
+
+        <button type="submit">생성!</button>
+
+    </form>
+</body>
+</html>
