@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html")
+    pigs = Pig.objects.all()
+    return render(request, "home.html",{'pigs': pigs})
 
 def signup(request):
     if request.method == "POST":
@@ -46,17 +47,23 @@ def logout(request):
     return redirect("home")
 
 @login_required(login_url="/registration/login")
-def makePig(request):
+def pig_new(request):
     if request.method == "POST":
-
         new_Pig = Pig.objects.create(
-            Pig_name = request.POST["Pig_name"],
-            Pig_content = request.POST["Pig_content"],
+            pig_name = request.POST["pig_name"],
+            pig_description = request.POST["pig_description"],
         )
         return redirect('home')
-    return render(request, 'makePig.html')
+    return render(request, 'pig_new.html')
 
-@login_required(login_url="/registration/login")
-def list(request):
-    pigs = Pig.objects.all()
-    return render(request, 'list.html', {'pigs': pigs})
+
+
+
+def pig_detail(request):
+    return render(request, 'pig_detail.html')
+
+def schedule_new(request):
+    return render(request, 'schedule_new.html')
+
+def pig_bye(request):
+    return render(request, 'pig_bye.html')

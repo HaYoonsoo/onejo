@@ -8,11 +8,13 @@
 </head>
 <body>
     <h1>돼지 생성!</h1>
-    <form action="/makePig" method="post">
+    <form action="/pig_new" method="post">
         {% csrf_token %}
-        <input type="text" name="Pig_name" placeholder="돼지 이름">
-        <input type="text" name="Pig_content" placeholder="돼지 내용">
+        <input type="text" name="pig_name" placeholder="돼지 이름">
+        <input type="text" name="pig_description" placeholder="돼지 내용">
         <button type="submit">생성!</button>
     </form>
+    <h3>인원 추가</h3>
+    <h3>1분당 벌금</h3>
     </body>
 </html>
