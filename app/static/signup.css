@@ -44,6 +44,15 @@ p{
     color:#4880EE;
 }
 
+div.id_pw{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    margin-top:50px;
+    width:80%;
+}
+
+
 h1{
     display:flex;
     justify-content:center;
