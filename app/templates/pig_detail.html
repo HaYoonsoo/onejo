@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>이 모임에서 내가 늦은 시간 총합/이 모임의 모든 사람들 늦은 시간 총합</h2>
+{% extends 'base.html' %}
 
-    <div class="pig_bye">
-        <a href="{% url 'pig_bye' %}">저금통 깨기</a>
-    </div>
+{% block wrapper %}
+<h2>이 모임에서 내가 늦은 시간 총합/이 모임의 모든 사람들 늦은 시간 총합</h2>
 
-    <div class="schedule">
-        <a href="{% url 'schedule_new' pig.pk %}">일정 추가</a>
+<div class="pig_bye">
+  <a href="{% url 'pig_bye' %}">저금통 깨기</a>
+</div>
 
-        <div class="schedule_list">
-          {% for schedule in schedules %}
-          <li> 
-              {{schedule.schedule_name}}
-              {{schedule.schedule_description}}
-              {{schedule.when_to_meet}}
-              {{schedule.where_to_meet}}
-          </li>
-          {% endfor %}
-        </div>
-    
-    
-    </div>
-    
-    <a href="{% url 'home' %}">홈으로 가기</a>
+<div class="schedule">
+  <a href="{% url 'schedule_new' pig.pk %}">일정 추가</a>
 
-</body>
-</html>
+  <div class="schedule_list">
+    {% for schedule in schedules %}
+    <li>
+      {{schedule.schedule_name}}
+      {{schedule.schedule_description}}
+      {{schedule.when_to_meet}}
+      {{schedule.where_to_meet}}
+    </li>
+    {% endfor %}
+  </div>
+
+
+</div>
+
+<a href="{% url 'home' %}">홈으로 가기</a>
+{% endblock wrapper %}
