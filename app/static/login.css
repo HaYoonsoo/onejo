@@ -1,14 +1,23 @@
-.wrapper{
+html {
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
+div.wrapper{
     min-height:100vh;
-    width:375px;
+    max-width:375px;
+    width:100%;
     margin:0 auto;
+    /* border:1px solid gray; */
     display:flex;
     flex-direction:column;
     align-items:center;
     /* justify-content:center; */
-    border:1px solid gray;
 }
-
 p{
     display:flex;
     justify-content:center;
@@ -29,13 +38,14 @@ div.id_pw{
     align-items: center;
     flex-direction:column;
     margin-top:50px;
-    width:300px;
+    width:80%;
 }
 
 input{
-    width:100%;
+    width:80%;
     height:40px;
-    border:0.5px solid lightgray;
+    margin: 1rem 0 0 0;
+    border:0.5px solid rgb(255, 255, 255);
     border-radius: 12px;
     padding:5px;
     background:#FFFFFF;
@@ -49,9 +59,18 @@ button{
     border-radius:12px;
     margin-top:50px;
     color:white;
+    cursor:pointer;
 }
-
-div.signup{
-    margin-top:80px;
+button:hover {
+    background-color: #DFEAFF;
+    color: #4880EE;
+    transition: 0.3s;
+}
+div.signup a{
+    /* margin-top:80px; */
     color:#4880EE;
+}
+.signup {
+    position: absolute;
+    bottom: 5vh;
 }
