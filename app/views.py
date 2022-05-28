@@ -40,7 +40,7 @@ def login(request):
             # return redirect("home")
             return redirect(request.GET.get("next", "/"))
         error = "아이디 또는 비밀번호가 틀립니다."
-        return render(request, "registration/login.html", {"error":error})
+        return render(request, "home.html", {"error":error})
     return render(request, "registration/login.html")
 
 def logout(request):
