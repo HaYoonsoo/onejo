@@ -27,7 +27,7 @@ class Participants(models.Model):
 class Pig(models.Model):
     pig_name = models.CharField(max_length=20)
     pig_description = models.TextField()
-    participants = models.ForeignKey(Participants, on_delete=models.CASCADE, related_name="pig_info")
+    # participants = models.ForeignKey(Participants, on_delete=models.CASCADE, related_name="pig_info")
     exchange_rate = models.FloatField(validators=[MinValueValidator(1)])
 
     def __str__(self):
