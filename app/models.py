@@ -15,12 +15,12 @@ class Profile(models.Model):
         return self.nickname
 
 
-class Participants(models.Model):
-    participant_profile = models.ManyToManyField(Profile, related_name = "participants")
-    time_late = models.IntegerField()
+# class Participants(models.Model):
+#     participant_profile = models.ManyToManyField(Profile, related_name = "participants")
+#     time_late = models.IntegerField()
 
-    def __str__(self):
-        return self.time_late
+#     def __str__(self):
+#         return self.time_late
 
 
 #돼지 생성 정보
@@ -29,18 +29,19 @@ class Pig(models.Model):
     pig_description = models.TextField()
     # participants = models.ForeignKey(Participants, on_delete=models.CASCADE, related_name="pig_info")
     exchange_rate = models.FloatField(validators=[MinValueValidator(1)])
+    
     def __str__(self):
         return self.pig_name
 
   
 class Schedule(models.Model):
-    pig_info = models.ForeignKey(Pig, on_delete=models.CASCADE, related_name="pig_info")
-    where_to_meet = models.TextField()
-    when_to_meet = models.DateTimeField()
+    pig_info = models.ForeignKey('Pig', on_delete=models.CASCADE)
     schedule_name = models.CharField(max_length=20)
     schedule_description = models.TextField()
+    where_to_meet = models.TextField()
+    when_to_meet = models.DateTimeField()
 
     def __str__(self):
-        return self.time_late
+        return self.schedule_name
 
 
