@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
@@ -17,8 +16,8 @@ class Profile(models.Model):
 
 
 class Participants(models.Model):
-    participant_profile = models.ManyToManyField(Profile, on_delete=models.CASCADE, related_name = "participants")
-    time_late = models.Integerfield()
+    participant_profile = models.ManyToManyField(Profile, related_name = "participants")
+    time_late = models.IntegerField()
 
     def __str__(self):
         return self.time_late
@@ -28,7 +27,7 @@ class Participants(models.Model):
 class Pig(models.Model):
     pig_name = models.CharField(max_length=20)
     pig_description = models.TextField()
-    participants = models.ForeignKey(Participants, on_delete=CASCADE, related_name="pig_info")
+    participants = models.ForeignKey(Participants, on_delete=models.CASCADE, related_name="pig_info")
     exchange_rate = models.FloatField(validators=[MinValueValidator(1)])
 
     def __str__(self):
@@ -36,7 +35,7 @@ class Pig(models.Model):
 
   
 class Schedule(models.Model):
-    pig_info = models.ForeignKey(Pig, on_delete=CASCADE, related_name="pig_info")
+    pig_info = models.ForeignKey(Pig, on_delete=models.CASCADE, related_name="pig_info")
     where_to_meet = models.TextField()
     when_to_meet = models.DateTimeField()
     schedule_name = models.CharField(max_length=20)
