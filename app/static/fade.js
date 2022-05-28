@@ -1,8 +1,8 @@
 
 
-(() => {
+const fade = (() => {
   //hyperlink 딜레이주기.
-  const delay = 150;
+  const delay = 300;
   const step = 10;
 
   const fade = document.createElement('div');
@@ -52,16 +52,25 @@
 
 
   for (const link of document.querySelectorAll('a')) {
-    let href = link.getAttribute('href');
-    link.setAttribute('href', '#');
     link.onclick = () => {
-      setTimeout(() => window.location.href = href, delay);
+      setTimeout(() => window.location.href = link.href, delay);
       fadeOut();
+      return false;
     };
   }
 
   for (const btn of document.querySelectorAll('button')) {
-    
+    if (btn.type === 'submit') {
+      btn.onclick = () => {
+        setTimeout(() => document.querySelector(`form[data-form-id="${btn.dataset.formId}"]`).submit(), delay);
+        fadeOut();
+        return false;
+      }
+    }
   }
 
-})()
+  return {
+    fadeIn: fadeIn, 
+    fadeOut: fadeOut
+  };
+})();
